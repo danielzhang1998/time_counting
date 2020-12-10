@@ -1,14 +1,15 @@
 import pickle
 
-total_time = 30*60*60 + 19 * 60 + 45
-hours_pass = 0
-sum_second = 0
+total_time = 30*60*60 + 19 * 60 + 45    # total time we need to use
+sum_second = 0  # time already used, initial be zero
 
 def data_set_read():
-    pickle_file = open('learn_progress.testing','rb')
+    pickle_file = open('learn_progress.testing','rb')   # load the data
     my_list2 = pickle.load(pickle_file)
     calculate(my_list2)
 
+
+# calculate the progress
 def calculate(my_list2):
     global sum_second
     for each in my_list2:

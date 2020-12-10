@@ -1,5 +1,7 @@
 import pickle
 
+# 18 is minutes and 00 is seconds
+# add in more time list or edit if need
 my_time = [
     [18,00],[13,32],[24,22],[19,28],
     [26,50],[19,00],[16,32],[16,31],
@@ -12,16 +14,17 @@ my_time = [
     [12,38]
     ]
 
+# make a new binary file to store the data in list my_time
 def add_data_set(my_time):
-    pickle_file = open('learn_progress.testing','wb')
-    pickle.dump(my_time,pickle_file)
+    # auto create a new file if it not exists, or write into the file directly if the file exists
+    pickle_file = open('learn_progress.testing','wb')   # wb is write binary, do not mind the file name, it can be anything
+    pickle.dump(my_time,pickle_file)    # dump the list into the file
     pickle_file.close()
 
 def data_set_read():
-    pickle_file = open('learn_progress.testing','rb')
-    my_list2 = pickle.load(pickle_file)
-    print(my_list2)
-    #print(len(my_list2))
+    pickle_file = open('learn_progress.testing','rb')   # rb is read binary
+    my_list2 = pickle.load(pickle_file) # load the binary data
+    print(my_list2) # show the data
 
 add_data_set(my_time)
 data_set_read()
